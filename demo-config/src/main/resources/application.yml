@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: demo-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wanghongbean/demo-cloud-config.git
+          username: wanghongbean
+          password: wanghongbin66
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka/

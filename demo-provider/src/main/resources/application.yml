@@ -1,0 +1,37 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: demo-provider
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    data: classpath:data.sql
+    schema: classpath:schema.sql
+logging:
+  level:
+    root: info
+    org.hibernate: info
+
+info:
+    app:
+      name: @project.artifactId@
+      encoding: @project.build.sourceEncoding@
+      java:
+        source: @java.version@
+        target: @java.version@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+security:
+  enable-csrf: false
